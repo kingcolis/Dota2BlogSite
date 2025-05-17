@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { API_URL } from '../config';
+import { API_URL } from '../config.js';
 
 export default function RegisterPage() {
   const [username, setUsername] = useState('');

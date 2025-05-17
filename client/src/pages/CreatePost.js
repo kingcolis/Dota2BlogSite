@@ -3,7 +3,7 @@ import 'react-quill/dist/quill.snow.css';
 import {useState} from "react";
 import {Navigate} from "react-router-dom";
 import Editor from "../Editor";
-import { API_URL } from '../config';
+import { API_URL } from '../config.js';
 
 export default function CreatePost() {
   const [title,setTitle] = useState('');
