@@ -1,25 +1,31 @@
 /* Base Reset */
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 a {
   cursor: pointer;
   transition: all 0.2s ease;
 }
 body {
-  margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #1c1c1c;
+  background: #0e0e0e;
   color: #e0d8c3;
-}
-img {
-  max-width: 100%;
+  background-image: linear-gradient(to right, #111, #1a1a1a);
+  background-attachment: fixed;
 }
 
-/* Main Container */
+/* Images */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Container */
 main {
-  padding: 10px;
-  max-width: 960px;
+  padding: 20px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
@@ -29,17 +35,17 @@ header {
   justify-content: space-between;
   align-items: center;
   margin: 30px 0 50px;
-  border-bottom: 1px solid #444;
+  border-bottom: 1px solid #333;
   padding-bottom: 10px;
 }
 header a {
   text-decoration: none;
-  color: #f5d67b;
+  color: #f0c75e;
 }
 header a.logo {
   font-weight: bold;
-  font-size: 1.8rem;
-  text-shadow: 0 0 5px #b68735;
+  font-size: 2rem;
+  text-shadow: 0 0 10px #d4af37;
 }
 header nav {
   display: flex;
@@ -47,19 +53,20 @@ header nav {
 }
 header nav a:hover {
   color: #ffcc00;
-  text-shadow: 0 0 6px #f5d67b;
+  text-shadow: 0 0 8px #ffcc00;
 }
 
-/* Post Grid */
+/* Post Card */
 div.post {
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
   margin-bottom: 30px;
-  background: #262626;
+  background: #1c1c1c;
   padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px #00000055;
+  border-radius: 12px;
+  box-shadow: 0 0 15px #00000088;
+  border: 1px solid #333;
 }
 @media screen and (min-width: 700px) {
   div.post {
@@ -69,334 +76,210 @@ div.post {
 div.post div.texts h2 {
   margin: 0;
   font-size: 2rem;
-  color: #ffcc00;
+  color: #e5b94b;
 }
 div.post div.texts a {
   text-decoration: none;
   color: inherit;
 }
 div.post p.info {
-  margin: 20px 0;
+  margin: 16px 0;
   color: #aaa;
-  font-size: 1rem;
-  font-weight: bold;
+  font-size: 0.95rem;
   display: flex;
   gap: 10px;
 }
 div.post p.info a.author {
-  color: #f5d67b;
+  color: #ffdd88;
 }
 div.post p.summary {
   margin: 10px 0;
-  line-height: 1.8rem;
+  line-height: 1.7rem;
+  color: #ccc;
 }
 
 /* Forms */
 form.login,
 form.register {
-  max-width: 400px;
+  max-width: 420px;
   margin: 0 auto;
-  background-color: #2e2e2e;
+  background-color: #222;
   padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 0 15px #00000088;
+  border-radius: 12px;
+  box-shadow: 0 0 15px #000000aa;
+}
+form.login h1,
+form.register h1 {
+  text-align: center;
+  color: #e5b94b;
+  margin-bottom: 20px;
 }
 input {
-  display: block;
-  margin-bottom: 10px;
   width: 100%;
-  padding: 10px;
-  border: 2px solid #444;
+  padding: 12px;
+  margin-bottom: 15px;
+  background-color: #111;
+  border: 1px solid #555;
   border-radius: 5px;
-  background-color: #1f1f1f;
   color: #eee;
 }
 button {
   cursor: pointer;
   width: 100%;
   background-color: #a52a2a;
-  border: 0;
-  color: #fff;
-  border-radius: 5px;
-  padding: 10px 0;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
   font-weight: bold;
   transition: background-color 0.2s ease;
 }
 button:hover {
   background-color: #cc3b3b;
 }
-form.login h1,
-form.register h1 {
-  text-align: center;
-  color: #ffcc00;
-  margin-bottom: 20px;
-}
 
 /* Post Page */
 .post-page {
-  background-color: #2c2c2c;
-  color: #e0d8c3;
-  border-radius: 15px;
-  padding: 20px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  background-color: #191919;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px #00000077;
 }
-
 .post-page h1 {
   text-align: center;
   font-size: 2.5rem;
   color: #ffd700;
   margin-bottom: 10px;
 }
-
-.post-page time {
-  text-align: center;
+.post-page time,
+.post-page .author {
   display: block;
+  text-align: center;
   font-size: 1rem;
   color: #888;
-  margin: 10px 0;
+  margin: 5px 0;
 }
-
-.post-page .author {
-  text-align: center;
-  margin-bottom: 20px;
-  font-size: 1rem;
-  color: #b5a275;
-}
-
 .post-page .image {
-  max-height: 100vh;
-  display: flex;
+  max-height: 70vh;
   overflow: hidden;
   margin: 20px 0;
-  width: 100%;
 }
-
 .post-page .image img {
-  object-fit: cover;
-  object-position: center center;
   width: 100%;
   height: 100%;
+  object-fit: cover;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
-
 .post-page .image:hover img {
-  transform: scale(1.05);
+  transform: scale(1.03);
   opacity: 0.9;
 }
-
 .post-page .content {
   font-size: 1.1rem;
-  line-height: 1.7rem;
+  line-height: 1.8rem;
+  color: #ddd;
   margin-top: 20px;
 }
-
-.post-page .content p {
-  margin: 20px 0;
-}
-
 .post-page .content li {
-  margin-bottom: 10px;
-  list-style-type: none;
-  padding-left: 20px;
+  margin-left: 25px;
+  margin-bottom: 12px;
+  list-style: none;
   position: relative;
 }
-
 .post-page .content li::before {
-  content: '•';
-  color: #ffd700;
+  content: '✦';
+  color: #e5b94b;
   position: absolute;
-  left: 0;
-  top: 0;
+  left: -20px;
 }
 
-/* Edit and Delete Buttons */
-.post-page .edit-row {
+/* Buttons */
+.edit-row {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
-
 .edit-btn {
-  background-color: #ffcc00;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 24px;
+  background-color: #e5b94b;
+  color: #222;
+  padding: 10px 20px;
   border-radius: 6px;
-  color: #333;
   text-decoration: none;
   font-weight: bold;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.2s ease;
+  transition: all 0.2s ease;
 }
-
 .edit-btn:hover {
   background-color: #e63946;
-  color: #fff;
+  color: white;
 }
-
 .delete-btn {
-  background-color: #b22222;
+  background-color: #8b0000;
   color: white;
   font-weight: bold;
-  padding: 12px 24px;
+  padding: 10px 20px;
   border: none;
   border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.2s ease;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
-
 .delete-btn:hover {
   background-color: #e63946;
-  color: white;
 }
 
 /* Spotify Embed */
 .spotify-embed {
-
-/* Main container styling */
-.index-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-  font-family: Arial, sans-serif;
+  margin-top: 40px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px #00000055;
 }
 
-/* Title and subtitle styling */
-.index-title {
-  font-size: 36px;
-  font-weight: bold;
-  margin-bottom: 10px;
-  text-align: center;
-}
-
-.index-subtitle {
-  font-size: 18px;
-  text-align: center;
-  margin-bottom: 30px;
-  color: #777;
-}
-
-/* Posts section styling */
-.posts-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-}
-
-/* Dota Section */
+/* Section Styling */
 .dota-section {
   display: flex;
   justify-content: space-between;
-  margin-top: 50px;
-}
-
-/* TI Champions Section */
-.ti-champions {
-  width: 48%;
-  padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-}
-
-.ti-champions .section-title {
-  font-size: 24px;
-  margin-bottom: 10px;
-  font-weight: bold;
-}
-
-.champion-item {
-  margin-bottom: 20px;
-}
-
-.champion-item h3 {
-  font-size: 20px;
-  margin-bottom: 5px;
-  color: #333;
-}
-
-.champion-item p {
-  color: #555;
-}
-
-/* Meta Heroes Section */
-.meta-heroes {
-  width: 48%;
-  padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-}
-
-.meta-heroes .section-title {
-  font-size: 24px;
-  margin-bottom: 10px;
-  font-weight: bold;
-}
-
-.hero-item {
-  margin-bottom: 20px;
-}
-
-.hero-item h3 {
-  font-size: 20px;
-  margin-bottom: 5px;
-  color: #333;
-}
-
-.hero-item p {
-  color: #555;
-}
-
-/* Spotify Embed Section */
-.spotify-embed {
   margin-top: 40px;
-  border-radius: 8px;
-  overflow: hidden;
+  flex-wrap: wrap;
+  gap: 20px;
 }
-
-/* Post Styling */
-.post {
-  border: 1px solid #ddd;
+.ti-champions,
+.meta-heroes {
+  flex: 1;
+  min-width: 300px;
+  background-color: #292929;
   padding: 20px;
-  border-radius: 8px;
-  width: 30%;
-  margin-bottom: 20px;
-  background-color: #fff;
+  border-radius: 10px;
+}
+.section-title {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #ffcc00;
+}
+.champion-item h3,
+.hero-item h3 {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+  color: #e5b94b;
+}
+.champion-item p,
+.hero-item p {
+  color: #ccc;
 }
 
-.post h2 {
-  font-size: 20px;
-  margin-bottom: 10px;
-}
-
-.post p {
-  font-size: 16px;
-  color: #555;
-}
-
-.post a {
-  color: #007bff;
-  text-decoration: none;
-}
-
-.post a:hover {
-  text-decoration: underline;
-}
-}
-
-/* Responsive Styling */
+/* Responsive Adjustments */
 @media screen and (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .edit-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .dota-section {
+    flex-direction: column;
+  }
   .post-page h1 {
     font-size: 2rem;
-  }
-
-  .post-page .image img {
-    height: auto;
-  }
-
-  .post-page .content {
-    font-size: 1rem;
   }
 }
