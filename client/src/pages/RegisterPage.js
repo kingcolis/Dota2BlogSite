@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { API_URL } from '../config';
 
 export default function RegisterPage() {
   const [username, setUsername] = useState('');
@@ -6,13 +7,14 @@ export default function RegisterPage() {
 
   async function register(ev) {
     ev.preventDefault();
-    const response = await fetch('http://localhost:4000/register', {
+    const response = await fetch(`${API_URL}/register`, {
       method: 'POST',
       body: JSON.stringify({ username, password }),
       headers: { 'Content-Type': 'application/json' },
+      credentials: 'include',
     });
 
-    if (response.status === 200) {
+    if (response.status === 201) {
       alert('Registration successful');
     } else {
       const error = await response.json();
