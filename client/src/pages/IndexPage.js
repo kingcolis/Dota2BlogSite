@@ -75,13 +75,15 @@ export default function IndexPage() {
 
         <div className="meta-heroes">
           <h2 className="section-title">Meta Heroes with High Winrates</h2>
-          {metaHeroes.map(hero => (
-            <div key={hero.hero} className="hero-item">
-              <h3>{hero.hero} - {hero.winrate}</h3>
-              <p><strong>Core Items:</strong> {hero.items.join(", ")}</p>
-              <p>{hero.description}</p>
-            </div>
-          ))}
+          <ul>
+            {metaHeroes.map(hero => (
+              <li key={hero.hero} className="hero-item">
+                <h3>{hero.hero} - {hero.winrate}</h3>
+                <p><strong>Core Items:</strong> {hero.items.join(", ")}</p>
+                <p>{hero.description}</p>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
 
