@@ -216,28 +216,18 @@ form.register h1 {
   margin-bottom: 30px;
 }
 
-.edit-btn,
-.delete-btn {
-  width: 50%;
-  text-align: center;
-  padding: 12px 0; /* Reduced horizontal padding */
+.edit-btn {
+  background-color: #ffcc00;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
   border-radius: 6px;
+  color: #333;
+  text-decoration: none;
   font-weight: bold;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: background-color 0.2s ease;
-  cursor: pointer;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  display: flex; 
-  gap: 10px;
-}
-
-.edit-btn {
-  background-color: #ffcc00;
-  color: #333;
-  text-decoration: none;
 }
 
 .edit-btn:hover {
@@ -248,7 +238,13 @@ form.register h1 {
 .delete-btn {
   background-color: #b22222;
   color: white;
+  font-weight: bold;
+  padding: 12px 24px;
   border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .delete-btn:hover {
